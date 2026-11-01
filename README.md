@@ -78,3 +78,4 @@ Automatic Water-System for plants.
 Deadcode
 
 # License
+MIT
