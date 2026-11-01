@@ -1,4 +1,4 @@
-# AquaRoot
+# 🌱 AquaRoot 
 Automatic Water-System for plants.
 
 # Components List
