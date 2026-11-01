@@ -1,12 +1,23 @@
 # 🌱 AquaRoot 
 Automatic Water-System for plants.
 
+<img width="1920" height="1080" alt="Screenshot From 2026-11-01 20-24-08" src="https://github.com/user-attachments/assets/c5f01bb1-8403-4363-bb8f-732462f055da" />
+
 # Components List
 
 **Project:** AquaRoot  
 **Version:** Rev 1.0  
 **Category:** Smart Automatic Plant Watering System  
 **PCB Design:** KiCad
+
+## Screenshots
+
+<img width="866" height="521" alt="Screenshot From 2026-11-01 16-38-09" src="https://github.com/user-attachments/assets/0b5356ea-89c9-4bd2-8709-ff3ce20cda52" />
+<img width="1920" height="1069" alt="Screenshot From 2026-11-01 16-59-28" src="https://github.com/user-attachments/assets/663e4c07-70a1-4047-a79a-92737e8949c5" />
+<img width="1920" height="1069" alt="Screenshot From 2026-11-01 17-19-39" src="https://github.com/user-attachments/assets/32f69bc0-eb69-4e2b-b590-5c5fd07e5254" />
+<img width="1920" height="1069" alt="Screenshot From 2026-11-01 17-43-35" src="https://github.com/user-attachments/assets/7f209080-defe-4839-ba56-4457a3aa6def" />
+<img width="1920" height="1080" alt="Screenshot From 2026-11-01 20-24-08" src="https://github.com/user-attachments/assets/204e3949-bb5d-41be-bb9f-341514b6f155" />
+<img width="793" height="813" alt="Screenshot From 2026-11-01 20-28-58" src="https://github.com/user-attachments/assets/27703b99-0b92-4f0b-81c8-ca2128f2ab20" />
 
 ## 1. Main Components
 
