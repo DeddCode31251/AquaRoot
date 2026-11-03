@@ -1,7 +1,9 @@
+
 # 🌱 AquaRoot 
 Automatic Water-System for plants.
 
-<img width="1920" height="1080" alt="Screenshot From 2026-11-01 20-24-08" src="https://github.com/user-attachments/assets/c5f01bb1-8403-4363-bb8f-732462f055da" />
+<img width="1902" height="1067" alt="Screenshot From 2026-11-03 21-10-52" src="https://github.com/user-attachments/assets/d6893613-78df-45aa-980f-3aadb0084651" />
+
 
 # Components List
 
@@ -11,7 +13,7 @@ Automatic Water-System for plants.
 **PCB Design:** KiCad
 
 ## Screenshots
-
+<img width="1920" height="1080" alt="Screenshot From 2026-11-01 20-24-08" src="https://github.com/user-attachments/assets/c5f01bb1-8403-4363-bb8f-732462f055da" />
 <img width="866" height="521" alt="Screenshot From 2026-11-01 16-38-09" src="https://github.com/user-attachments/assets/0b5356ea-89c9-4bd2-8709-ff3ce20cda52" />
 <img width="1920" height="1069" alt="Screenshot From 2026-11-01 16-59-28" src="https://github.com/user-attachments/assets/663e4c07-70a1-4047-a79a-92737e8949c5" />
 <img width="1920" height="1069" alt="Screenshot From 2026-11-01 17-19-39" src="https://github.com/user-attachments/assets/32f69bc0-eb69-4e2b-b590-5c5fd07e5254" />
