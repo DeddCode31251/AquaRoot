@@ -2,6 +2,8 @@
 # 🌱 AquaRoot 
 Automatic Water-System for plants.
 
++11h of work
+
 <img width="1902" height="1067" alt="Screenshot From 2026-11-03 21-10-52" src="https://github.com/user-attachments/assets/d6893613-78df-45aa-980f-3aadb0084651" />
 
 
