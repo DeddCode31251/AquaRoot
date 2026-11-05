@@ -1,64 +1,74 @@
+# 🌱 AquaRoot
 
-# 🌱 AquaRoot 
-Automatic Water-System for plants.
+**An automatic plant watering system powered by ESP32.**
 
-+11h of work
+AquaRoot is a custom-designed plant watering system that monitors soil moisture and controls a water pump to help keep plants hydrated. The project combines embedded programming, sensor interfacing, and a custom PCB designed in KiCad.
 
-<img width="1902" height="1067" alt="Screenshot From 2026-11-03 21-10-52" src="https://github.com/user-attachments/assets/d6893613-78df-45aa-980f-3aadb0084651" />
+> **Project status:** PCB design completed — hardware assembly and testing are the next steps.
 
+---
 
-# Components List
+## Project Overview
 
-**Project:** AquaRoot  
-**Version:** Rev 1.0  
-**Category:** Smart Automatic Plant Watering System  
-**PCB Design:** KiCad
+| Detail | Description |
+|---|---|
+| Project | AquaRoot |
+| Version | Rev 1.0 |
+| Category | Smart Plant Care / Embedded Systems |
+| Microcontroller | ESP32 DevKit V1 (ESP32-WROOM-32) |
+| PCB Design Software | KiCad |
+| Development Time | 11+ hours |
 
-## Screenshots
-<img width="1920" height="1080" alt="Screenshot From 2026-11-01 20-24-08" src="https://github.com/user-attachments/assets/c5f01bb1-8403-4363-bb8f-732462f055da" />
-<img width="866" height="521" alt="Screenshot From 2026-11-01 16-38-09" src="https://github.com/user-attachments/assets/0b5356ea-89c9-4bd2-8709-ff3ce20cda52" />
-<img width="1920" height="1069" alt="Screenshot From 2026-11-01 16-59-28" src="https://github.com/user-attachments/assets/663e4c07-70a1-4047-a79a-92737e8949c5" />
-<img width="1920" height="1069" alt="Screenshot From 2026-11-01 17-19-39" src="https://github.com/user-attachments/assets/32f69bc0-eb69-4e2b-b590-5c5fd07e5254" />
-<img width="1920" height="1069" alt="Screenshot From 2026-11-01 17-43-35" src="https://github.com/user-attachments/assets/7f209080-defe-4839-ba56-4457a3aa6def" />
-<img width="1920" height="1080" alt="Screenshot From 2026-11-01 20-24-08" src="https://github.com/user-attachments/assets/204e3949-bb5d-41be-bb9f-341514b6f155" />
-<img width="793" height="813" alt="Screenshot From 2026-11-01 20-28-58" src="https://github.com/user-attachments/assets/27703b99-0b92-4f0b-81c8-ca2128f2ab20" />
+## Features
 
-## 1. Main Components
+- Soil moisture monitoring using a capacitive analog sensor
+- Automatic watering through a 5V DC pump
+- Pump control using an N-channel MOSFET
+- Water-level detection using a float switch
+- OLED display for system information
+- Manual control through push buttons
+- LED indicators for power and watering status
+- Buzzer for audio notifications
+- Custom PCB designed in KiCad
+- Expandable design for future sensors and Wi-Fi features
+## Components
 
-| Component | Specification | Quantity | Purpose |
+### Main Components
+
+| Component | Specification | Qty | Purpose |
 |---|---|---:|---|
 | ESP32 DevKit V1 | ESP32-WROOM-32 | 1 | Main microcontroller |
 | Soil Moisture Sensor | Capacitive, analog output | 1 | Measures soil moisture |
-| DC Water Pump | 5V DC | 1 | Waters the plant |
-| N-Channel MOSFET | AO3400A | 1 | Controls the water pump |
+| DC Water Pump | 5V DC | 1 | Supplies water to the plant |
+| N-Channel MOSFET | AO3400A | 1 | Switches the pump |
 | Flyback Diode | SS14 / 1N5819 | 1 | Protects against inductive voltage spikes |
-| Water Level Sensor | Float switch | 1 | Detects low water level |
+| Float Switch | Water-level sensor | 1 | Detects water level |
 
-## 2. Display & User Interface
+### Display & User Interface
 
-| Component | Specification | Quantity | Purpose |
+| Component | Specification | Qty | Purpose |
 |---|---|---:|---|
 | OLED Display | 0.96", SSD1306, I2C | 1 | Displays system information |
-| Push Button | Tactile, normally open | 2 | Manual control |
-| LED | 3mm / 5mm | 2 | Power and watering indicators |
+| Push Buttons | Normally open, tactile | 2 | Manual user input |
+| LEDs | 3mm / 5mm | 2 | Power and watering indicators |
 | Buzzer | 5V | 1 | Audio notifications |
 
-## 3. Power Management & Protection
+### Power Management & Protection
 
-| Component | Specification | Quantity | Purpose |
+| Component | Specification | Qty | Purpose |
 |---|---|---:|---|
-| DC Power Input | 5V input connector | 1 | External power |
-| Buck Converter | Input/output rated for selected supply | 1 | Voltage regulation if required |
+| DC Power Input | 5V input connector | 1 | External power supply |
+| Buck Converter | Rated for selected supply | 1 | Voltage regulation, if required |
 | Fuse | Rated for pump startup current | 1 | Overcurrent protection |
-| Reverse Polarity Protection | P-MOSFET or Schottky diode | 1 | Input protection |
+| Reverse Polarity Protection | P-MOSFET or Schottky diode | 1 | Protects against reversed input |
 | Power Switch | SPST | 1 | Main power control |
-| Capacitor | 100nF | 3 | High-frequency decoupling |
-| Capacitor | 10µF | 2 | Power stabilization |
+| Capacitors | 100nF | 3 | High-frequency decoupling |
+| Capacitors | 10µF | 2 | Power stabilization |
 | Capacitor | 470µF | 1 | Pump supply buffering |
 
-## 4. Passive Components
+### Passive Components
 
-| Component | Value | Quantity | Purpose |
+| Component | Value | Qty | Purpose |
 |---|---|---:|---|
 | Resistor | 100Ω | 1 | MOSFET gate resistor |
 | Resistor | 100kΩ | 1 | MOSFET gate pull-down |
@@ -66,31 +76,91 @@ Automatic Water-System for plants.
 | Resistor | 10kΩ | 2 | Pull-up / pull-down |
 | Resistor | 1kΩ | 1 | General-purpose current limiting |
 
-## 5. Connectors & PCB Components
+### Connectors & PCB
 
-| Component | Specification | Quantity | Purpose |
+| Component | Specification | Qty | Purpose |
 |---|---|---:|---|
-| Screw Terminal | 2-pin | 2 | Pump and power connections |
+| Screw Terminals | 2-pin | 2 | Pump and power connections |
 | JST Connector | 3-pin | 1 | Soil moisture sensor |
-| JST Connector | 2-pin | 1 | Water level sensor |
-| Pin Header | 2.54mm | 1 set | ESP32 connection |
-| PCB | Custom-designed | 1 | Main circuit board |
+| JST Connector | 2-pin | 1 | Water-level sensor |
+| Pin Headers | 2.54mm | 1 set | ESP32 connection |
+| Custom PCB | Designed in KiCad | 1 | Main circuit board |
 
-## 6. Future Upgrades
+## 🔌 System Design
 
-| Component | Specification | Purpose |
-|---|---|---|
-| DS3231 RTC | Real-time clock | Scheduled watering |
-| BH1750 | Light intensity sensor | Monitor sunlight |
-| DHT22 | Temperature and humidity | Environmental monitoring |
-| Second Moisture Sensor | Capacitive analog | Monitor another plant |
-| Wi-Fi Dashboard | ESP32 Wi-Fi | Remote monitoring and control |
+AquaRoot is built around an ESP32 microcontroller.
 
----
+The soil moisture sensor provides an analog measurement to the ESP32. Based on the programmed moisture threshold, the ESP32 controls the water pump through an N-channel MOSFET. A float switch provides water-level detection, while the OLED, buttons, LEDs, and buzzer provide user interaction and system feedback.
 
+The PCB includes power input, switching, connectors, and supporting components for the system.
 
-# Author 
-Deadcode
+## 🛠️ PCB Design
 
-# License
-MIT
+The AquaRoot PCB was designed using **KiCad**.
+
+Design work includes:
+- Schematic capture
+- Component selection and footprint assignment
+- PCB layout
+- Track routing
+- Design Rule Check (DRC)
+- Gerber and drill file generation
+
+**PCB dimensions:** 92 mm × 63 mm
+
+## 📷 Design Screenshots
+
+### Schematic
+
+![AquaRoot Schematic](https://github.com/user-attachments/assets/c5f01bb1-8403-4363-bb8f-732462f055da)
+
+### PCB Layout
+
+![AquaRoot PCB Layout](https://github.com/user-attachments/assets/0b5356ea-89c9-4bd2-8709-ff3ce20cda52)
+
+![AquaRoot PCB Routing](https://github.com/user-attachments/assets/663e4c07-70a1-4047-a79a-92737e8949c5)
+
+![AquaRoot PCB Design](https://github.com/user-attachments/assets/32f69bc0-eb69-4eb2-b590-5c5fd07e5254)
+
+![AquaRoot PCB View](https://github.com/user-attachments/assets/7f209080-defe-4839-ba56-4457a3aa6def)
+
+![AquaRoot PCB Final View](https://github.com/user-attachments/assets/204e3949-bb5d-41be-bb9f-341514b6f155)
+
+### Additional Design View
+
+![AquaRoot Design](https://github.com/user-attachments/assets/27703b99-0b92-4f0b-81c8-ca2128f2ab20)
+
+## Future Improvements
+
+Potential upgrades for future revisions:
+
+| Upgrade | Purpose |
+|---|---|
+| DS3231 RTC | Scheduled watering |
+| BH1750 | Light intensity monitoring |
+| DHT22 | Temperature and humidity monitoring |
+| Second Moisture Sensor | Monitor another plant |
+| Wi-Fi Dashboard | Remote monitoring and control |
+| Data Logging | Track moisture readings and watering history |
+
+## Planned Development
+
+- [x] Design the circuit schematic
+- [x] Design the custom PCB
+- [x] Route PCB tracks
+- [x] Run PCB design checks
+- [x] Generate manufacturing files
+- [ ] Manufacture the PCB
+- [ ] Assemble the components
+- [ ] Develop and upload ESP32 firmware
+- [ ] Test soil moisture readings
+- [ ] Test automatic pump control
+- [ ] Validate the complete system
+
+## Author
+
+**Deadcode**
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
