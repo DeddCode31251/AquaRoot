@@ -1,108 +1,46 @@
-# 📐 Schematic & Design
+# Schematic & Design
 
 AquaRoot's electronic circuit is designed using **KiCad**. The schematic is organized into functional sections to make the hardware easier to understand, develop, test, and maintain.
 
 ## 1. System Architecture
 
-The system is built around an ESP32 microcontroller that monitors soil moisture and controls an automatic irrigation mechanism.
+AquaRoot is built around an ESP32 DevKit V1 (ESP32-WROOM-32). It monitors soil moisture and controls a 5V DC water pump through an N-channel MOSFET.
+
+A float switch monitors the water level. An OLED display, push buttons, LEDs, and a buzzer provide system feedback and user interaction.
+
+The design uses a custom PCB measuring **92 mm × 63 mm**.
 
 ## 2. Schematic Sections
 
-The schematic is divided into the following functional blocks:
-
 | Section | Components | Description |
 |---|---|---|
-| Power Management | Power connector, capacitors, protection | Provides stable and protected power |
-| Main Controller | ESP32 DevKit | Processes sensor readings and controls the system |
-| Soil Monitoring | Capacitive soil moisture sensor | Measures soil moisture |
-| Water Level Detection | Float switch | Detects low water levels |
-| Pump Driver | N-channel MOSFET, flyback diode | Controls the DC water pump |
+| Power Input | 5V connector, fuse, power switch | Supplies the system |
+| Power Filtering | 470µF and 100nF capacitors | Helps stabilize the supply |
+| Main Controller | ESP32 DevKit V1 | Processes sensor readings and controls outputs |
+| Soil Monitoring | Capacitive moisture sensor | Measures soil moisture |
+| Water Level Detection | Float switch | Detects water level |
+| Pump Driver | N-channel MOSFET, flyback diode, resistors | Switches the DC water pump |
 | Display | SSD1306 OLED | Displays system information |
-| User Interface | Push buttons | Provides manual control |
-| Indicators | LEDs, resistors | Displays system status |
+| User Interface | Two push buttons | Provides manual input |
+| Indicators | LEDs and current-limiting resistors | Indicates system status |
+| Audio Feedback | 5V buzzer | Provides notifications |
 
 ## 3. GPIO Pin Configuration
 
-Initial proposed ESP32 pin assignment:
+The following pin assignments reflect the current schematic design.
 
 | ESP32 GPIO | Component | Function |
 |---|---|---|
-| GPIO34 | Soil Moisture Sensor | Analog input |
-| GPIO25 | MOSFET Driver | Pump control |
-| GPIO27 | Float Switch | Water level detection |
+| GPIO34 | Soil Moisture Sensor | Analog sensor input |
+| GPIO25 | MOSFET Gate | Pump control |
+| GPIO27 | Float Switch | Water-level detection |
 | GPIO21 | OLED SDA | I2C data |
 | GPIO22 | OLED SCL | I2C clock |
-| GPIO32 | Push Button 1 | Manual watering |
-| GPIO33 | Push Button 2 | Settings |
-| GPIO2 | Status LED | Power indicator |
-| GPIO4 | Status LED | Pump indicator |
+| GPIO32 | MODE Button | User input |
+| GPIO33 | SELECT Button | User input |
+| GPIO18 | Pump Indicator LED | Watering status |
+| GPIO4 | Buzzer | Audio notifications |
 
-*Note: GPIO assignments are preliminary and will be verified against the selected ESP32 board and final circuit.*
+**Power indicator:** The power LED is connected to the 3.3V supply through a current-limiting resistor.
 
-## 4. Pump Driver Circuit
-
-AquaRoot uses an N-channel logic-level MOSFET to control the DC water pump.
-
-Main components:
-
-- AO3400A N-channel MOSFET.
-- SS14 / 1N5819 flyback diode.
-- 100Ω gate resistor.
-- 100kΩ gate pull-down resistor.
-- DC water pump.
-
-The ESP32 controls the MOSFET through a GPIO output. This allows the pump to operate without drawing its current directly from the microcontroller.
-
-## 5. Power Management
-
-The initial design targets a 5V DC power input.
-
-Power management includes:
-
-- Input power connector.
-- Power switch.
-- Overcurrent protection.
-- Reverse polarity protection.
-- Voltage regulation for the ESP32.
-- Decoupling and bulk capacitors.
-
-The pump power branch will be sized independently according to the pump's operating and startup current.
-
-## 6. Design Software
-
-| Software | Purpose |
-|---|---|
-| KiCad | Schematic and PCB design |
-| Arduino IDE | ESP32 firmware development |
-| C++ | Embedded programming |
-
-## 7. Design Workflow
-
-1. Create the electrical schematic.
-2. Select and verify electronic components.
-3. Assign KiCad symbols.
-4. Assign component footprints.
-5. Run Electrical Rules Check (ERC).
-6. Design PCB layout.
-7. Run Design Rules Check (DRC).
-8. Generate Gerber and drill files.
-9. Assemble and test the PCB.
-
-## 8. Current Design Status
-
-| Task | Status |
-|---|---|
-| Project architecture | Planned |
-| Component selection | Initial selection |
-| Power circuit | Pending |
-| ESP32 connections | Pending |
-| Sensor circuits | Pending |
-| Pump driver | Pending |
-| OLED interface | Pending |
-| Complete schematic | Pending |
-| PCB layout | Pending |
-| Hardware testing | Pending |
-
----
-
-**Design Goal:** Develop a reliable, modular, and expandable automatic plant watering system using ESP32 and custom-designed PCB hardware.
+*Note: These assignments describe the schematic. Firmware
