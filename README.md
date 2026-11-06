@@ -6,6 +6,8 @@ AquaRoot is a custom-designed plant watering system that monitors soil moisture 
 
 > **Project status:** PCB design completed — hardware assembly and testing are the next steps.
 
+
+<img width="1062" height="713" alt="Screenshot From 2026-11-06 19-19-04" src="https://github.com/user-attachments/assets/93838027-0371-40b2-a33b-2828551f9af4" />
 ---
 
 ## Project Overview
