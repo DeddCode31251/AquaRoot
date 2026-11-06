@@ -157,6 +157,9 @@ Potential upgrades for future revisions:
 - [ ] Test automatic pump control
 - [ ] Validate the complete system
 
+# Last Updates
+- Replaced push buttons with 2 pins (New-Footprint: Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical Old-Footprint: Button_Switch_THT:SW_PUSH_6mm )
+- Replaced leds with 2 pins (New-Footprint: Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical Old-Footprint: LED_THT:LED_D5.0mm)
 ## Author
 
 **Deadcode**
